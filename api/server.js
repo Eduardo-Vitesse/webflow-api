@@ -15,12 +15,12 @@ app.use(cors(corsOptions));
 const port = 3000
 var dados;
 
-const url = 'https://api.webflow.com/collections/63ac42c4acaa435cc84cf30a/items';
+const url = `https://api.webflow.com/collections/${process.env.COLLECTION_ID}/items`;
 const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    authorization: 'Bearer 7bd7559152d0309413566d7a60be1071c6138666b098e45126dbeddf9046c98d'
+    authorization: `Bearer ${process.env.TOKEN}`
   }
 };
 
